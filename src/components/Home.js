@@ -1,9 +1,8 @@
 import React from "react";
-import {useNavigate} from "react-router-dom";
+import {submit} from "../redux/actions";
+import {connect} from "react-redux";
 
 class Home extends React.Component {
-
-
 
     constructor() {
         super();
@@ -36,6 +35,8 @@ class Home extends React.Component {
     submit(){
         console.log(this.state.form);
 
+        this.props.objSubmit(this.state.form);
+
         //error handling
         this.setState({
             form:{
@@ -45,8 +46,6 @@ class Home extends React.Component {
             },
             complete:"This is completed"
         })
-
-
     }
 
     render() {
@@ -63,4 +62,10 @@ class Home extends React.Component {
     }
 }
 
-export default Home;
+const mapDispatch=(dispatch)=>{
+    return({
+        objSubmit:(vl)=> dispatch(submit(vl))
+    })
+}
+
+export default connect(null, mapDispatch)(Home);

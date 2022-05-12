@@ -1,7 +1,7 @@
 const rootReducer =  (state, action) => {
     switch (action.type){
         case "submit":
-            let newlist=state.list;
+            let newlist=state.items;
             newlist.push(action.val)
             return{
                 ...state,
