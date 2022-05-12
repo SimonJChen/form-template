@@ -1,17 +1,15 @@
 import React from "react";
 
-class Items extends React.Component {
-    constructor() {
-        super();
-    }
+function Items() {
 
-    render() {
+
+
         return (
             <div>
                 <h1>Items</h1>
             </div>
         )
-    }
+
 }
 
 export default Items;

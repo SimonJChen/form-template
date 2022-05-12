@@ -1,6 +1,10 @@
 import React from "react";
+import {useNavigate} from "react-router-dom";
 
 class Home extends React.Component {
+
+
+
     constructor() {
         super();
         this.state={
@@ -46,6 +50,7 @@ class Home extends React.Component {
     }
 
     render() {
+
         return (
             <div>
                 <input name={"name"} type="text" placeholder={"Name..."} value={this.state.form.name} onChange={this.valueChange}/>
